@@ -1,0 +1,28 @@
+//cd to the folder where Dockerfiles is present.
+cd getting--started--k8s
+
+//login to docker
+
+//build the image:
+docker build -t aashwinbhushal200/getting_started_k8s:v1 .
+
+//push the image:
+docker push aashwinbhushal200/getting_started_k8s:v1
+
+//from the docker desktop start k8s service and choose docker-desktop as cluster.
+kubectl get nodes
+
+// applying declaratively .post manifest file to API Server: 
+kubectl apply -f pod.yml
+
+//get all pods in namespace
+kubectl get pods --watch
+
+//more details
+kubectl get pods -o wide
+
+//more detail
+kubectl describe hello-pod
+
+//multi container pod
+kubectl describe multi-pod
