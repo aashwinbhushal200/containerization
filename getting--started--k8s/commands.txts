@@ -26,3 +26,22 @@ kubectl describe hello-pod
 
 //multi container pod
 kubectl describe multi-pod
+
+//creating service imperatively and getting Ip address to connect:
+cmd:
+kubectl expose pod hello-pod \
+--name==hello-svc\
+--targe=port=8080\
+--type=NodePort
+service/hello-svc
+
+powershell command 
+kubectl expose pod hello-pod `
+--name=hello-svc `
+--target-port=8080 `
+--type=NodePort
+
+//get all services: 
+kubectl get svc
+
+//
